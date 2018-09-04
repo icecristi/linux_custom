@@ -7,3 +7,13 @@ export CLICOLOR="Yes"
 export LSCOLOR=""
 
 # Alias
+alias ll="ls -l"
+alias ps='ps auxf'
+
+# History
+export HISTSIZE=20 #bash history will have 20 commands
+export HISTFILESIZE=50
+export HISTCONTROL=ignoredups #no duplicate lines in history
+
+# Path
+PATH=$PATH:~/scripts:/opt;export PATH
