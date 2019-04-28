@@ -1,29 +1,38 @@
+# Install and configure Ghost VM
 
-## Problem
+I used Ansible roles to configure the Ubuntu VM and install Ghost application + dependencies.
 
-You have recently joined a company (let’s call it Evil Corp) as their lead Infrastructure Engineer. They would like you to lead the setup of their new blogging platform using [Ghost](https://ghost.org) as a CMS.
+## Getting Started
 
-Previously one of Evil Corp’s web developers setup the server to host some old insecure Wordpress blog, without any version control, configuration management, backups, monitoring etc. This has been a major headache ever since, so now they brought in the big guns (You) to do a proper job.
+### Prerequisites
 
-The decision has been made to start from scratch with a freshly provisioned Ubuntu VM to host the Ghost application. The VM instance is to be provisioned and operate on [AWS free tier](https://aws.amazon.com/free/) which should be sufficient for development purposes. It is crucial that you make it as frictionless as possible for the developers to get started with the instance and any future operations.
+1. Ubuntu VM
+2. Ansible
 
-Following the guides on Ghost’s website, you should setup a basic Ghost instance. Don’t worry about customizing it just yet, getting it to display the default page is fine.
+### Roles description
 
-While the developers are writing code, you are tasked with making it easy and safe for them to continuously deploy their changes in the future. Since you know that the better job you do at automating the whole setup, the more free time you’ll have to do more fun stuff, you rely on your trusted tools (git, Ansible, Terraform, Docker, Vagrant etc.) to make life easier for yourself and the developers.
+a. ubuntu_newuser -> add a new user with sudo and ssh key + install ufw + allow SSH
+  - Variables:
+   - name = the name of the new user
+   - pass = the encrypted password
+   - key = ssh public key
 
-## Tasks
+b. ubuntu_nginx -> install NGINX + allow HTTP and HTTPS traffic
+  - Variables:
+   - site_name = the new domain name
 
-1. Create a new user with home directory + SSH identity
-2. Install Ghost application + dependencies
-3. Setup the firewall to only allow SSH and Ghost traffic through
-4. Setup a cron-job that:
-  * dumps the database
-  * saves a snapshot of the production site under `/backup` directory
-  * mails you a summary every night
-5. Create a way for developers to push changes to Ghost in an easy and repeatable way
+c. ubuntu_mysql -> install mysql-server + install node.js + cron job to dump all databases into /backup folder
+  - Variables:
+   - mysql_password = the mysql root password
 
-## Deliverables
+d. ubuntu_ghost -> install ghost + configure ghost + cron job to backup the website
+  - Variables:
+   - name = ghost user name
+   - pass = the encrypted passwordghost user password
+   - site_name = the new ghost domain name
 
-1. Git repo with the Ansible playbook(s) (or any other code) to configure the VM instance
-2. Clear instructions for the developers on how they can deploy their Ghost code changes and view them
-3. A paragraph reflecting on the solution and pointing out what can be improved given more time going forward
+### Improvements
+
+1. Configure Ghost from Ansible - I didn't manage to correctly configure it
+2. Develop the Ansible roles to make them more versatile and customizable
+3. Add more options and steps into the roles to make them more suitable and reliable for a production environment
