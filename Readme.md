@@ -15,7 +15,7 @@ This are the Powershell scripts that will build, test, configure, archive and de
 >
 >>Download link: https://visualstudio.microsoft.com/vs/community/
 
-Select the following components:
+**Select the following components:**
 >>.NET
 ```
 .NET Framework 4 targeting pack		.NET Framework 4.6.2 SDK
@@ -76,24 +76,21 @@ Visual Studio SDK
 
 ### Running the script
 
-A step by step series of examples that tell you how to get a development env running
-
-1. Arguments
-You need to set two variables:
-	a. $projectPath takes the project path
-		```
-		$projectPath = "K:\iv\KWEB\KWEB.Website"
-		```
-	b. $projectType takes the priject type selfhosted (for websites deplyed on dedicated server), azure (for Azure cloud services) and service (for .net services)
-		```
-		$projectType = "selfhosted"
-		```
-
-And repeat
-
+Arguments
+>You need to set two variables:
+>1. $projectPath takes the project path
 ```
-until finished
+$projectPath = "K:\iv\KWEB\KWEB.Website"
 ```
+>2. $projectType takes one of this values:
+* selfhosted (for websites deplyed on dedicated server), 
+* azure (for Azure cloud services) and 
+* service (for .net services)
+```
+$projectType = "selfhosted"
+```
+
+
 
 End with an example of getting some data out of the system or using it for a little demo
 
