@@ -1,100 +1,72 @@
 # Jenkins build, test and deploy scripts
-
-One Paragraph of project description goes here
+This are the Powershell scripts that will build, test, configure, archive and deploy our internal websites and services.
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
 1. NuGet
-Download link: https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-Install path: %LOCALAPPDATA%\NuGet\NuGet.exe
+>>Download link: https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+>
+>>Install path: %LOCALAPPDATA%\NuGet\NuGet.exe
 
 2. Visual Studio Community Edition
-Download and install Visual Studio Community edition
-Download link: https://visualstudio.microsoft.com/vs/community/
+>>Download and install Visual Studio Community edition
+>
+>>Download link: https://visualstudio.microsoft.com/vs/community/
 
 Select the following components:
-.NET
+>>.NET
 ```
-.NET Framework 4 targeting pack
-.NET Framework 4.5 targeting pack
-.NET Framework 4.5.1 targeting pack
-.NET Framework 4.5.2 targeting pack
-.NET Framework 4.6 targeting pack
+.NET Framework 4 targeting pack		.NET Framework 4.6.2 SDK
+.NET Framework 4.5 targeting pack	.NET Framework 4.6.2 targeting pack
+.NET Framework 4.5.1 targeting pack	.NET Framework 4.7.2 SDK
+.NET Framework 4.5.2 targeting pack	.NET Framework 4.7.2 targeting pack
+.NET Framework 4.6 targeting pack	Advanced ASP.NET features
 .NET Framework 4.6.1 targeting pack
-.NET Framework 4.6.2 SDK
-.NET Framework 4.6.2 targeting pack
-.NET Framework 4.7.2 SDK
-.NET Framework 4.7.2 targeting pack
-Advanced ASP.NET features
 ```
 
-Cloud, database, and server
+>>Cloud, database, and server
 ```
-Azure Authoring Tools
-Azure Cloud Services build tools
-Azure Cloud Services core tools
-Azure Compute Emulator
-Azure Data Lake and Stream Analytics Tools
-Azure development prerequisites
-Azure libraries for .NET
-Azure Resource Manager core tools
-Azure Storage Emulator
-Azure WebJobs Tools
-Cloud Explorer
-CLR data types for SQL Server
-Connectivity and publishing tools
-Container development tools
-Data sources for SQL Server support
-IIS Express
-Service Fabric Tools
-SQL ADAL runtime
-SQL Server Command Line Utilities
-SQL Server Data Tools
-SQL Server Express 2016 LocalDB
-SQL Server ODBC Driver
-Visual Studio Tools for Kubernetes
-Web Deploy
+Azure Authoring Tools				Azure Storage Emulator			SQL Server Command Line Utilities
+Azure Cloud Services build tools		Azure WebJobs Tools			SQL Server Data Tools
+Azure Cloud Services core tools			Cloud Explorer				SQL Server Express 2016 LocalDB
+Azure Compute Emulator				CLR data types for SQL Server		SQL Server ODBC Driver
+Azure Data Lake and Stream Analytics Tools	Connectivity and publishing tools	Visual Studio Tools for Kubernetes
+Azure development prerequisites			Container development tools		Web Deploy
+Azure libraries for .NET			IIS Express		
+Data sources for SQL Server support		Service Fabric Tools
+Azure Resource Manager core tools		SQL ADAL runtime
 ```
 
-Code tools
+>>Code tools
 ```
-Developer Analytics tools
-NuGet package manager
-NuGet targets and build tasks
-Text Template Transformation
+Developer Analytics tools	NuGet targets and build tasks
+NuGet package manager		Text Template Transformation
 ```
 
-Compilers, build tools, and runtimes
+>>Compilers, build tools, and runtimes
 ```
 C# and Visual Basic Roslyn compilers
 MSBuild
 ```
 
-Debugging and testing
+>>Debugging and testing
 ```
-.NET profiling tools
+.NET profiling tools		Just-In-Time debugger
 JavaScript diagnostics
-Just-In-Time debugger
 ```
 
-Development activities
+>>Development activities
 ```
-ASP.NET and web development tools
-C# and Visual Basic
-F# desktop language support
-F# language support
+ASP.NET and web development tools		IntelliCode
+C# and Visual Basic				JavaScript and TypeScript language support
+F# desktop language support			Live Share
+F# language support				Razor Language Services
 F# language support for web projects
-IntelliCode
-JavaScript and TypeScript language support
-Live Share
-Razor Language Services
 ```
 
-SDKs, libraries, and frameworks
+>>SDKs, libraries, and frameworks
 ```
 TypeScript 3.5 SDK
 Visual Studio SDK
